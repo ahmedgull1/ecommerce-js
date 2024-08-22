@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>API</title>
+</head>
+
+<body>
+    <div class="flex justify-between overflow-x-hidden top-0 sticky z-10 bg-white">
+        <ul id="ul"
+            class="flex gap-8 py-1 px-10 w-80 h-10 mt-6 pl-20 -ml-4 text-white bg-black rounded-full hover:bg-blue-500 ">
+            <!-- <li  id="Home" class="cursor-pointer">Home</li>
+            <li  id="Order" class="cursor-pointer">Order</li>
+            <li  id="Product" class="cursor-pointer">Product</li> -->
+        </ul>
+        <img class="w-36 h-24"
+            src="./online-shopping-logo-design-template-digital-shopping-logo-mouse-cursor-cart-concepts_502185-286_1_-removebg-preview-removebg-preview.png"
+            alt="">
+        <button id="btn"
+            class="btn relative border hover:bg-blue-500 px-4 w-32 h-10 -mr-6  mt-6 pt-0 text-xl text-white bg-black rounded-full">
+            <i class="fa-solid fa-cart-shopping -ml-14 -mt-20 "></i>
+            <a id="pop"
+                class="pop absolute bg-blue-500 text-white -ml-12 -mt-2 text-sm text-center   w-4 h-4 rounded-full "></a>
+        </button>
+
+    </div>
+    <div id="Home" class="bg relative overflow-hidden">
+        <div id="saidbar" class="saidbar overflow-y-scroll w-2/6 -mr-[34%] h-[85%]">
+        </div>
+        <p class=" w-[70%] mx-auto mt-72 text-white text-6xl text-center font-bold animate-bounce">The landing page
+            where customers
+            start their shopping journey</p>
+    </div>
+
+    <div class=" bg-black text-center py-14">
+        <h1 class="text-white w-[85%] mx-auto text-5xl font-bold">This section provides access to all your products or
+            product categories</h1>
+        <p class="text-white w-[60%] mx-auto pt-4">Discover our wide range of high-quality products, thoughtfully
+            curated and organized into various categories for your convenience. From fashion to electronics, find
+            everything you need in one place for a seamless shopping experience.
+        </p>
+    </div>
+
+
+
+    <div id="main" class="main flex flex-wrap gap-5 w-[95%] mx-auto mt-10">
+
+    </div>
+
+    <h1 class="bg-black text-center text-3xl text-white py-10">Created By Balochzada .</h1>
+
+
+</body>
+<script>
+    AOS.init();
+</script>
+<script src="./script.js"></script>
+
+</html>

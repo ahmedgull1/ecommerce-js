@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Orders</title>
+</head>
+
+<body>
+    <div class=" h-24 w-[100%] border top-0 sticky z-10 bg-white shadow-3xl">
+
+        <div class="flex justify-between w-[60%] h-24 border-green-500  ">
+            <ul id="ul"
+                class="flex gap-8 py-1 px-10 w-80 h-10 mt-6 pl-20 -ml-4 text-white bg-black rounded-full hover:bg-blue-500 ">
+            </ul>
+            <img class="w-36 h-24"
+                src="./online-shopping-logo-design-template-digital-shopping-logo-mouse-cursor-cart-concepts_502185-286_1_-removebg-preview-removebg-preview.png"
+                alt="">
+        </div>
+    </div>
+
+    <h1 class="text-center text-3xl font-bold mt-10">Orders Screen</h1>
+
+    <div class="orders ">
+
+    </div>
+</body>
+
+<script>
+
+
+    let mydive = document.querySelector('.orders');
+
+
+    let navitem = ['Home', 'Order', 'Products']
+    navitem.map((ele) => {
+        ul.innerHTML += `
+    <li class="cursor-pointer">${ele}</li>
+    `
+    })
+
+
+    function displayOrders() {
+        let orders = JSON.parse(localStorage.getItem('order')) || [];
+
+        if (orders.length === 0) {
+
+            mydive.innerHTML = "No Order Found!";
+        }
+        else {
+
+            orders.map((ele, i) => {
+                orders.innerText += `<li>${i} </li>`
+
+                ele.map((item, index) => {
+                    mydive.innerHTML += `
+                    <div class=" mt-10">
+
+                        <li class="font-bold text-2xl py-6 pl-20 list-none "> Order No: ${index + 1} </li>
+
+                        <ul class=" flex  w-[100%] mx-auto justify-around">
+
+                                     <p>Title</p>
+                                     <p>Descriotion</p>
+                                     <p>Quantity</p>
+                                     <p>Price</p>   
+                        </ul>
+
+                        <hr class="w-[85%] border mx-auto mt-2">
+                           
+
+                        <ul class=" w-[100%] mx-auto flex justify-around mt-4">
+
+                            <li class="flex">
+                                <img class="w-40 h-40" src="${item.image}" />
+                                <p class=" mt-10 p-8">${item.title}</p>   
+                                
+                            </li>
+                                <p class=" mt-16">${item.qty}</p>
+                                <p class=" mt-16">$${item.price}</p>
+                        </ul>
+                        </div>`;
+                });
+
+            });
+        }
+
+    }
+    displayOrders();
+
+</script>
+
+
+
+
+
+
+
+<!-- function displayOrderSummary() { 
+    let orders = JSON.parse(localStorage.getItem('order')) || [];
+    let orderSummaryDiv = document.getElementById('order-summary');
+
+    if (orders.length === 0) {
+        orderSummaryDiv.innerHTML = "<p>No orders yet.</p>";
+    } else {
+        let totalQuantity = 0;
+        let totalBill = 0;
+
+        orders.forEach(function (order) {
+            order.forEach(function (item) {
+                totalQuantity += item.qty;
+                totalBill += item.qty * item.price;
+            });
+        });
+
+        orderSummaryDiv.innerHTML = `
+            <h2>Order Summary</h2>
+            <p>Total Quantity: ${totalQuantity}</p>
+            <p>Total Bill: $${totalBill}</p>
+        `;
+    }
+} -->
+
+</html>
