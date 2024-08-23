@@ -78,14 +78,18 @@ function handelCartDisp() {
     cart.map((ele, index) => {
         saidbar.innerHTML += `
         <a herf="#${ele}" 
-        <div class="cart p-3 border border-white flex w-full gap-4">
-            <img class="w-40 h-40 " src=${ele.image} />
-            <div class="list-none">
-                <button onclick="{Remove(${index})}" class="ml-40 font-bold text-gray-400 hover:text-blue-700 ">Delete <i class="fa-solid fa-trash"></i></button>
-                <li class=" text-black mt-2 ">${ele.title} </li>
-                <li class="mt-1  text-black "> ${ele.category} </li>
-                <li class="mt-1 text-black  ">Price: $ ${ele.price * ele.qty} </li>
-                <div class="flex mt-6 gap-1 justify-end text-black ">
+        <div class="cart p-2 border border-white mt-2 flex w-full gap-4">
+            <div class="w-[30%] h-40">
+            <img class="w-full h-full " src=${ele.image} />
+            </div>
+            <div class="list-none  [70%]  ">
+                    <div class="flex justify-end  px-2">
+                        <button onclick="{Remove(${index})}" class=" font-bold text-gray-400 hover:text-blue-700 "><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                    <li class="  w-full text-black mt-2 ">${ele.title} </li>
+                    <li class="mt-1 w-full   text-black "> ${ele.category} </li>
+                    <li class="mt-1 w-full  text-black  ">Price: $ ${ele.price * ele.qty} </li>
+                <div class="flex w-full  mt-6 gap-1 justify-end text-black ">
                     <button onclick="decQty(${index})" class="w-10 h-8 rounded-md bg-red-500 text-black text-xl">-</button>
                     <p class="bg-white h-8 w-10 text-center  rounded-md">${ele.qty}</p>
                     <button onclick="incQty(${index})" class="w-10 h-8 rounded-md bg-red-500 text-black text-xl">+</button>
@@ -99,13 +103,11 @@ function handelCartDisp() {
     });
 
     if (cart.length > 0) {
-
         const checkoutbutton = document.createElement('button')
-        checkoutbutton.classList.add('text-white', 'sticky', 'b-0', 'w-40', 'mx-36', 'mb-10', 'hover:bg-blue-500', 'px-10', 'py-2', 'rounded-full', 'border', 'text-xl');
+        checkoutbutton.classList.add('text-white', 'sticky', 'b-0', 'w-40', 'mt-2', 'mx-36', 'mb-10', 'hover:bg-blue-500', 'px-10', 'py-2', 'rounded-full', 'border', 'text-xl');
         checkoutbutton.onclick = checkout;
         checkoutbutton.innerText = 'Checkout'
         saidbar.appendChild(checkoutbutton)
-
     }
 }
 
